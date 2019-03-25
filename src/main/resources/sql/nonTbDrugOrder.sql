@@ -42,7 +42,7 @@ FROM
      JOIN program prog ON pp.program_id = prog.program_id AND prog.name in ('Second-line TB treatment register','Basic management unit TB register') AND pp.voided = 0
      LEFT JOIN patient_program_attribute pg_attr ON pp.patient_program_id = pg_attr.patient_program_id AND pg_attr.voided = 0
      LEFT JOIN program_attribute_type pg_attr_type ON pg_attr.attribute_type_id = pg_attr_type.program_attribute_type_id and pg_attr_type.name in ('Registration Number')
-     LEFT JOIN program_attribute_type pg_at_cohort on (pg_at_cohort.name = 'Belongs to external cohort')
+     LEFT JOIN program_attribute_type pg_at_cohort on (pg_at_cohort.name = 'Belongs to external export')
      LEFT JOIN patient_program_attribute ppa_cohort on (pp.patient_program_id = ppa_cohort.patient_program_id and
                                                         pg_at_cohort.program_attribute_type_id =
                                                         ppa_cohort.attribute_type_id)

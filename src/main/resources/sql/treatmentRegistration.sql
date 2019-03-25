@@ -31,7 +31,7 @@ FROM
      JOIN patient_identifier pi ON pa.patient_id = pi.patient_id
      LEFT OUTER JOIN patient_program_attribute attr ON pp.patient_program_id = attr.patient_program_id AND attr.voided = 0
      LEFT OUTER JOIN program_attribute_type attr_type ON attr.attribute_type_id = attr_type.program_attribute_type_id
-     LEFT JOIN program_attribute_type pg_at_cohort on (pg_at_cohort.name = 'Belongs to external cohort')
+     LEFT JOIN program_attribute_type pg_at_cohort on (pg_at_cohort.name = 'Belongs to external export')
      LEFT JOIN patient_program_attribute ppa_cohort on (pp.patient_program_id = ppa_cohort.patient_program_id and
                                                         pg_at_cohort.program_attribute_type_id =
                                                         ppa_cohort.attribute_type_id)

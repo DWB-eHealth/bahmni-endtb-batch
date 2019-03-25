@@ -40,7 +40,7 @@ FROM
      LEFT JOIN program_attribute_type pg_attr_type
        ON pg_attr.attribute_type_id = pg_attr_type.program_attribute_type_id AND
           pg_attr_type.name IN ('Registration Number')
-     LEFT JOIN program_attribute_type pg_at_cohort on (pg_at_cohort.name = 'Belongs to external cohort')
+     LEFT JOIN program_attribute_type pg_at_cohort on (pg_at_cohort.name = 'Belongs to external export')
      LEFT JOIN patient_program_attribute ppa_cohort on (pp.patient_program_id = ppa_cohort.patient_program_id and
                                                         pg_at_cohort.program_attribute_type_id =
                                                         ppa_cohort.attribute_type_id)

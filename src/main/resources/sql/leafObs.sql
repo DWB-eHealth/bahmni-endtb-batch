@@ -6,7 +6,7 @@ select o.concept_id as conceptId,
 from patient_program pp
 join program_attribute_type pg_at on (pg_at.name = 'Registration Number')
 left join  patient_program_attribute ppa  on (pp.patient_program_id = ppa.patient_program_id and pg_at.program_attribute_type_id=ppa.attribute_type_id)
-  left join program_attribute_type pg_at_cohort on (pg_at_cohort.name = 'Belongs to external cohort')
+  left join program_attribute_type pg_at_cohort on (pg_at_cohort.name = 'Belongs to external export')
   left join patient_program_attribute ppa_cohort on (pp.patient_program_id = ppa_cohort.patient_program_id and
                                                      pg_at_cohort.program_attribute_type_id =
                                                      ppa_cohort.attribute_type_id)
